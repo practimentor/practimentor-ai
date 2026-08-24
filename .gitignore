@@ -1,0 +1,62 @@
+# ---------------------------------------------------------------
+# Secretos y credenciales — NUNCA se suben
+# ---------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+
+# ---------------------------------------------------------------
+# Python
+# ---------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Entornos virtuales
+.venv/
+venv/
+env/
+ENV/
+
+# Herramientas
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.tox/
+
+# ---------------------------------------------------------------
+# Datos locales — PDFs de prueba y vectores no van al repo
+# ---------------------------------------------------------------
+data/
+uploads/
+storage/
+qdrant_storage/
+*.pdf
+!docs/**/*.pdf
+
+# ---------------------------------------------------------------
+# Sistema operativo y editores
+# ---------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+
+# ---------------------------------------------------------------
+# Temporales
+# ---------------------------------------------------------------
+*.log
+tmp/
