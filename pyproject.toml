@@ -1,0 +1,9 @@
+[project]
+name = "utp-agent-api-rag"
+version = "0.1.0"
+description = "Servicio de agente RAG del proyecto utp-agent"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.32",
+]
