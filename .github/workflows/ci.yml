@@ -1,0 +1,26 @@
+name: CI servicio de IA
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  pruebas:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clonar repositorio
+        uses: actions/checkout@v4
+
+      - name: Instalar uv
+        uses: astral-sh/setup-uv@v6
+
+      - name: Instalar dependencias
+        run: uv sync --locked
+
+      - name: Revisar estilo
+        run: uv run ruff check .
+
+      - name: Ejecutar pruebas
+        run: uv run pytest -q
