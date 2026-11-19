@@ -19,3 +19,15 @@ uv run uvicorn app.main:app --reload    # GET /health
 ## Cómo contribuir
 
 Lee [`CONTRIBUTING.md`](CONTRIBUTING.md).
+
+## Integración continua
+
+El workflow `.github/workflows/ci.yml` se ejecuta en cada Pull Request hacia `main` y en cada push a `main`. Instala las dependencias con `uv sync --locked`, revisa el estilo con Ruff y ejecuta las pruebas con pytest. La rama `main` exige que el check `pruebas` pase antes de fusionar.
+
+Para reproducirlo en local:
+
+```bash
+uv sync --locked
+uv run ruff check .
+uv run pytest -q
+```
